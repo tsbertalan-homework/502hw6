@@ -28,7 +28,6 @@ terms = 4
 fig = plt.figure(1, figsize=(11, 8.5))
 ax = fig.add_subplot(1, 1, 1)
 for (P, color, marker) in zip([0.1, 1, 5], ['k-', 'k--', 'k-.'], ['o', 's', 'd']):
-#for P in [5]:
     xl = list(arange(0, 1, 0.01))
     ul = []
     uml = []
@@ -40,8 +39,6 @@ for (P, color, marker) in zip([0.1, 1, 5], ['k-', 'k--', 'k-.'], ['o', 's', 'd']
         uml_components.append(um_components)
     ax.plot(xl, ul, color, label=r'$\phi=%.1f$, analytical' % P)
     uml_components = array(uml_components)  # first index is x; second is component
-    #for i in range(terms):
-        #plt.plot(xl, uml_components[:,i])
     ax.scatter(xl, uml, label=r'$\phi=%.1f$, %i fourier terms' % (P, terms), facecolor='k', marker=marker)
 ax.legend(loc='lower right')
 ax.set_xlim((0, 1))

@@ -40,13 +40,12 @@ nl = arange(0,3*pi, .01)
 for (U, color) in zip([1, 2, 5], ['k--', 'k-', 'k-.']):
     etal = [eta(t, U, 20) for t in tl]
     ax.plot(tl, etal, color, label=r'$U=%i$' % U)
-    lnl = [ln(U, n) for n in nl]
-    fnl = [fn(U, n) for n in nl]
-    #ax.plot(nl, fnl)
 
 ax.legend()
+ax.set_xlabel(r'$t$, dimensionless time')
+ax.set_ylabel(r'$\eta(t)$, effectiveness factor')
+
 ax.set_title('hw6, no 7.3')
 filename = 'hw6_7.3.pdf'
 print 'saving', filename
 fig.savefig(filename)
-#plt.show()
